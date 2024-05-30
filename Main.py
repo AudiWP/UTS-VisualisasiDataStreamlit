@@ -37,17 +37,7 @@ with st.container():
   col1, col2 = st.columns([0.5, 0.5])
   with col1:
     st.dataframe(data=df)
-  with col2:
-    # col1, col2 = st.columns([0.5, 0.5])
-    # col1.metric(label="Percentage recovery", value="79.19%", delta="0.35%")
-    # col2.metric(label="Percentage dead", value="3.45%", delta="0,00%")
-    # st.caption("Summary statistics of covid-19, update at 20 October 2020")
-    st.markdown(" ")      
-    st.markdown(" ")      
-    st.markdown(" ")      
-    st.markdown(" ")      
-    st.markdown(" ")      
-    st.markdown(" ")      
+  with col2:    
     st.markdown("Dataset ini berasal dari National Institute of Diabetes and Digestive and Kidney Diseases. Tujuan dari kumpulan data ini adalah untuk memprediksi secara diagnostik apakah pasien menderita diabetes atau tidak, berdasarkan pengukuran diagnostik tertentu yang disertakan dalam kumpulan data. Beberapa batasan ditempatkan pada pemilihan contoh-contoh ini dari basis data yang lebih besar. Secara khusus, semua pasien di sini adalah perempuan berusia minimal 21 tahun yang berasal dari suku Indian Pima.")
     st.markdown("tautan untuk unduh : (https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database?resource=download)")
 
@@ -59,7 +49,7 @@ st.info(" ")
 filtered_df = df[df['Glucose'] > 150]
 sorted_df = filtered_df.sort_values(by='Glucose', ascending=True)
 
-fig = px.line(sorted_df, x='Glucose', y='BMI', markers=True, color_discrete_sequence=['red'], title='Visualisasi Hubungan BMI dengan Glukosa > 150')
+fig = px.line(sorted_df, x='Glucose', y='BMI', markers=True, color_discrete_sequence=['red'], title='Visualisasi Line Plot Hubungan BMI dengan Glukosa > 150')
 st.plotly_chart(fig, use_container_width=True)
 
 
